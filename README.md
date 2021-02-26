@@ -28,7 +28,7 @@ The official documentation is hosted on Read the Docs: https://easysklearn.readt
 
 ## Contributors
 
-Development lead:
+Development leaders:
 
 - Ifeanyi Anene
 - Lara Habashy
@@ -36,7 +36,7 @@ Development lead:
 - Zhenrui Yu
 
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/yzr1996/easysklearn/graphs/contributors). If you would like to contribute, please view our [contributing guidelines](https://github.com/UBC-MDS/524_easysklearn/blob/main/CONTRIBUTING.rst) and get familiar with the [Git workflow](https://blog.programster.org/git-workflows).
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/yzr1996/easysklearn/graphs/contributors). If you would like to contribute, please view our [contributing guidelines](https://github.com/UBC-MDS/524_easysklearn/blob/main/CONTRIBUTING.rst) and get familiar with the [Github flow](https://blog.programster.org/git-workflows) workflow.
 
 ### Credits
 
