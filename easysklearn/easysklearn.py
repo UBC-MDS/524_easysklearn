@@ -34,11 +34,11 @@ def miss_data(x_train, x_test, method = "mean"):
     --------
     >>> from easysklearn import miss_data
     
-    >>> x_train = pd.DataFrame(np.array([['Blue', 56, 4], ['Red', 35, 6],
-    ['Green', 18, 9]]), columns = ['color', 'count', 'usage'])
+    >>> x_train = pd.DataFrame(np.array([[4500, np.nan, 4], [3450, 350_000, 6],
+    [np.nan, 800_000, 9]]), columns = ['size', 'price', 'bedrooms'])
     
-    >>> x_test = pd.DataFrame(np.array([['Blue', 56, 4], ['Red', 35, 6],
-    ['Green', 18, 9]]), columns = ['color', 'count', 'usage'])
+    >>> x_test = pd.DataFrame(np.array([[2500, np.nan, 4], [5000, 750_000, 4],
+    [np.nan, 1_200_000, 5]]), columns = ['size', 'price', 'bedrooms'])
     
     >>> x_train_imp, x_test_imp = miss_data(x_train, x_test, strategy = "mean")
     """
