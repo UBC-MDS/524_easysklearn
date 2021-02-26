@@ -45,7 +45,7 @@ def miss_data(x_train, x_test, method = "mean"):
 
 def baseline_fun(X_train, y_train, type = 'regression', metrics_1 = 'accuracy', metrics_2 = 'r2'):
     """
-    Gives the socring metrics of sklearn DummyRegressor and LinearRegression or sklearn DummyClassifier and LogisticRegression.
+    Gives the scoring metrics of sklearn DummyRegressor and LinearRegression or sklearn DummyClassifier and LogisticRegression.
 
     Parameters
     ----------
@@ -58,16 +58,16 @@ def baseline_fun(X_train, y_train, type = 'regression', metrics_1 = 'accuracy', 
     type: string
             What kind of supervised machine learning to use, regression or classification:
             
-            If “regression”, then DummyRegressor and LinearRegression would be used
+            If “regression”, then DummyRegressor and LinearRegression would be used.
 
-            If “classification", then DummyClassifier and LogisticRegression would be used
+            If “classification", then DummyClassifier and LogisticRegression would be used.
     
     metrics_1: string
-            What kind of socre metrics to use for classification problem, the default one is accuracy. 
+            What kind of score metrics to use for classification problem, the default one is accuracy. 
             The all avaliable scoring metrics is https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter
     
     metrics_2: string
-            What kind of socre metrics to use for regression problem, the default one is r2
+            What kind of score metrics to use for regression problem, the default one is r2
             The all avaliable scoring metrics is https://scikit-learn.org/stable/modules/model_evaluation.html#scoring-parameter
 
     Returns
