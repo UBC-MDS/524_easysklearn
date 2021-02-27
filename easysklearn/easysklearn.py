@@ -1,10 +1,35 @@
-def eda():
+#Spliting the data into train and test
+
+def EDA(df):
+        """[Split DataFrame into random train and test subsets, inspection of data by printing first and last 5 lines of DataFrame, reporting missing values in the dataset, reporting type of features, checking imbalance present in dependent variable, investigate correlation matrix]
+        
+        Parameters
+        ----------
+        df: pandas DataFrame
+                Pandas dataframes. 
+        
+        Returns
+        -------
+        DataFrame: DataFrame
+                DataFrame
+        
+        None: 
+                This method prints a summary of a DataFrame and returns None.
+        
+        ax: matplotlib Axes
+              Axes object with the heatmap.
+
+        Series
+
+        """
+
+
 
 def miss_data(x_train, x_test, method = "mean"):
     """
     Impute value(s) wherever there is (are) a missing value(s) in the dataframe. 
     
-    Takes in a the train and test split dataframes and apply univariate feature
+    Takes in the train and test split dataframes and applies univariate feature
     imputation on the missing values in either dataframe depending on the strategy
     selected by the user. 
     
