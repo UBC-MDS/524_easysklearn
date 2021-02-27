@@ -15,13 +15,13 @@ $ pip install -i https://test.pypi.org/simple/ easysklearn
 
 This package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical and categorical features. Each function will have it's own required and optional arguments.
 
-- eda: eda data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
+- eda: EDA data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
 
-- Data imputation: it will handle missing data in the data frame.
+- Data imputation: It will handle missing data in the data frame.
 
-- Baseline model: Baseline model will help a user  in choosing a better supervised classification model.
+- Baseline Function: Baseline function will give users a quick check of the performance of the selected sklearn models as a baseline for further model training.
 
-- Feature selection: This will remove redundant features based on the model selected by the user.
+- Feature selection: This will remove redundant features based on the forward selection.
 
 ## How the easysklearn package fits into the Python ecosystem
 
