@@ -2,8 +2,9 @@
 
 ![](https://github.com/yzr1996/easysklearn/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/yzr1996/easysklearn/branch/main/graph/badge.svg)](https://codecov.io/gh/yzr1996/easysklearn) ![Release](https://github.com/yzr1996/easysklearn/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/easysklearn/badge/?version=latest)](https://easysklearn.readthedocs.io/en/latest/?badge=latest)
 
-This cookiecutter creates a boilerplate for a Python project.
+## Summary
 
+easysklearn is an open-source library designed to perform exploratory data analysis and to help in missing data imputation. It also helps in choosing a supervised classification model by comparing different data models. Also, it assists in feature selection which is a common problem in the big data world.
 ## Installation
 
 ```bash
@@ -12,7 +13,19 @@ $ pip install -i https://test.pypi.org/simple/ easysklearn
 
 ## Features
 
-- TODO
+This package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical and categorical features. Each function will have it's own required and optional arguments.
+
+- eda: eda data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
+
+- Data imputation: it will handle missing data in the data frame.
+
+- Baseline model: Baseline model will help a user  in choosing a better supervised classification model.
+
+- Feature selection: This will remove redundant features based on the model selected by the user.
+
+## How the easysklearn package fits into the Python ecosystem
+
+To our knowledge, while pandas profiling provides some data statistical analysis, there is no general-purpose library for performing the above task together in the Python ecosystem.
 
 ## Dependencies
 
