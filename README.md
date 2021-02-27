@@ -28,7 +28,15 @@ The official documentation is hosted on Read the Docs: https://easysklearn.readt
 
 ## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/yzr1996/easysklearn/graphs/contributors).
+Development leaders:
+
+- Ifeanyi Anene
+- Lara Habashy
+- Sakshi Jain
+- Zhenrui Yu
+
+
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/yzr1996/easysklearn/graphs/contributors). If you would like to contribute, please view our [contributing guidelines](https://github.com/UBC-MDS/524_easysklearn/blob/main/CONTRIBUTING.rst) and get familiar with the [Github flow](https://blog.programster.org/git-workflows) workflow.
 
 ### Credits
 
