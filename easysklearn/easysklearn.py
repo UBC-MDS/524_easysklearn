@@ -55,6 +55,12 @@ def miss_data(x_train, x_test, method = "mean"):
     0  4500.0  975000.0       4.0
     1  3450.0  350000.0       6.0
     2  3750.0  800000.0       9.0
+    
+    >>> x_test_imp 
+        size      price     bedrooms
+    0  2500.0   975000.0       4.0
+    1  5000.0   750000.0       4.0
+    2  3750.0  1200000.0       5.0
     """
 
 def baseline_fun():
