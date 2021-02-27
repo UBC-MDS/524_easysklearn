@@ -4,7 +4,7 @@
 
 ## Summary
 
-easysklearn is an open-source library designed to perform exploratory data analysis and to help in missing data imputation. It also helps in choosing a supervised classification model by comparing different data models. Also, it assists in feature selection which is a common problem in the big data world.
+easysklearn is an open-source library designed to perform exploratory data analysis, to help in missing data imputation and to give baseline models. Also, it assists in feature selection which is a common problem in the big data world.
 ## Installation
 
 ```bash
