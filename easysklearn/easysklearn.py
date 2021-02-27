@@ -27,6 +27,12 @@ def EDA(df):
 
 def miss_data(x_train, x_test, method = "mean"):
     """
+    Impute value(s) wherever there is (are) a missing value(s) in the dataframe. 
+    
+    Takes in the train and test split dataframes and applies univariate feature
+    imputation on the missing values in either dataframe depending on the strategy
+    selected by the user. 
+    
     Parameters
     ----------
     x_train : Pandas DataFrame
@@ -37,6 +43,8 @@ def miss_data(x_train, x_test, method = "mean"):
     
     method: string
             The imputation strategy:
+            
+            Imputing the mean along each column is the default setting. 
             
             If “mean”, then replace missing values using the mean along each column. This can only be used with numeric data.
 
@@ -57,13 +65,27 @@ def miss_data(x_train, x_test, method = "mean"):
     --------
     >>> from easysklearn import miss_data
     
-    >>> x_train = pd.DataFrame(np.array([['Blue', 56, 4], ['Red', 35, 6],
-    ['Green', 18, 9]]), columns = ['color', 'count', 'usage'])
+    >>> strategy = "median"
     
-    >>> x_test = pd.DataFrame(np.array([['Blue', 56, 4], ['Red', 35, 6],
-    ['Green', 18, 9]]), columns = ['color', 'count', 'usage'])
+    >>> x_train = pd.DataFrame(np.array([[4500, np.nan, 4], [3450, 350_000, 6],
+    [np.nan, 800_000, 9]]), columns = ['size', 'price', 'bedrooms'])
     
-    >>> x_train_imp, x_test_imp = miss_data(x_train, x_test, strategy = "mean")
+    >>> x_test = pd.DataFrame(np.array([[2500, np.nan, 4], [5000, 750_000, 4],
+    [np.nan, 1_200_000, 5]]), columns = ['size', 'price', 'bedrooms'])
+    
+    >>> x_train_imp, x_test_imp = miss_data(x_train, x_test, method = strategy)
+    
+    >>> x_train_imp
+        size     price    bedrooms
+    0  4500.0  975000.0       4.0
+    1  3450.0  350000.0       6.0
+    2  3750.0  800000.0       9.0
+    
+    >>> x_test_imp 
+        size      price     bedrooms
+    0  2500.0   975000.0       4.0
+    1  5000.0   750000.0       4.0
+    2  3750.0  1200000.0       5.0
     """
 
 def baseline_fun(X_train, y_train, type = 'regression', metrics_1 = 'accuracy', metrics_2 = 'r2'):
@@ -105,4 +127,32 @@ def baseline_fun(X_train, y_train, type = 'regression', metrics_1 = 'accuracy', 
     >>> baseline_fun(x_train, y_train, type = 'regression', metrics = 'neg_root_mean_squared_error')
     """
 
-def feature_select():
+def feature_select(X_train, y_train, threshold=None):
+    """
+    Performs forward selection of features in the data by starting with an empty model, 
+    and iteratively adds features that improve the model's score. The algorithm stops once 
+    the increase of the accuracy from an additional features is smaller than the threshold.
+    
+    Parameters
+    ----------
+    X_train : Pandas DataFrame
+              The training set of the data.
+    
+    y_train : Pandas DataFrame
+              The test set of the data.
+    
+    threshold : int (default=None)
+                user input threshold used for stopping criteria.
+    
+    Returns
+    -------
+    result : Pandas DataFrame
+             A DataFrame containing the selected features, i.e. the remaining features in the model
+
+    Examples
+    --------
+    >>> from easysklearn import feature_select
+    >>> from sklearn.linear_model import LinearRegression
+    
+    >>> feature_select(X_train, y_train, threshold=None)
+    """
