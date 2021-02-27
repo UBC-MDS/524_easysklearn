@@ -102,4 +102,32 @@ def baseline_fun(X_train, y_train, type = 'regression', metrics_1 = 'accuracy', 
     >>> baseline_fun(x_train, y_train, type = 'regression', metrics = 'neg_root_mean_squared_error')
     """
 
-def feature_select():
+def feature_select(X_train, y_train, threshold=None):
+    """
+    Performs forward selection of features in the data by starting with an empty model, 
+    and iteratively adds features that improve the model's score. The algorithm stops once 
+    the increase of the accuracy from an additional features is smaller than the threshold.
+    
+    Parameters
+    ----------
+    X_train : Pandas DataFrame
+              The training set of the data.
+    
+    y_train : Pandas DataFrame
+              The test set of the data.
+    
+    threshold : int (default=None)
+                user input threshold used for stopping criteria.
+    
+    Returns
+    -------
+    result : Pandas DataFrame
+             A DataFrame containing the selected features, i.e. the remaining features in the model
+
+    Examples
+    --------
+    >>> from easysklearn import feature_select
+    >>> from sklearn.linear_model import LinearRegression
+    
+    >>> feature_select(X_train, y_train, threshold=None)
+    """
