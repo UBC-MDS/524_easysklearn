@@ -1,3 +1,7 @@
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
 def feature_select(X_train, y_train, threshold=0.05):
     """
     Performs forward selection of features in the data by starting with an empty model, 
@@ -25,15 +29,8 @@ def feature_select(X_train, y_train, threshold=0.05):
     
     >>> feature_select(X_train, y_train, threshold=None)
     """
-    
-    # check type - exception handling
-    if type(X_train) not in {pd.DataFrame}:
-        raise TypeError('X_train must be a Pandas DataFrame.')
-
-    if type(y_train) not in {pd.DataFrame, pd.Series}:
-        raise TypeError('y_train must be a Pandas DataFrame.')
-
-    # check length - exception handling
+ 
+    # exception handling
     if len(X_train.shape) != 2:
         raise ValueError('X_train must be 2-dimensional.')
 
