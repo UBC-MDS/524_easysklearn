@@ -3,6 +3,7 @@ from sklearn.datasets import load_boston
 from feature_select import feature_select
 import numpy as np
 import pandas as pd
+import pytest
 
 def test_feature_select():
     """
@@ -25,3 +26,31 @@ def test_feature_select():
     # output type
     assert isinstance(best_features, list)
     assert isinstance(best_features[0], str)
+
+def test_feature_input():
+    """
+    This test function tests the input exceptions of feature_select() 
+    """  
+    df = pd.DataFrame(np.random.randint(0,10,size=(10, 5)), columns=list('ABCDE')) 
+    one_d_array = np.random.rand(10,)
+    random_array = np.random.rand(11,)
+    
+    # X must be a dataframe
+    with pytest.raises(TypeError):
+        feature_select('a string', one_d_array)
+    
+    # y must be an np.array
+    with pytest.raises(TypeError):
+        feature_select(df, 'a string')
+        
+    # X must not be 1-d either
+    with pytest.raises(ValueError):
+        feature_select(one_d_array, one_d_array)
+    
+    # y must be 1-d array
+    with pytest.raises(ValueError):
+        feature_select(df, df)
+        
+    # X and y must have consistent number of samples
+    with pytest.raises(ValueError):
+        feature_select(df, random_array)
