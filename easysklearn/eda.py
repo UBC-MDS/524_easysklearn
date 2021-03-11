@@ -1,4 +1,4 @@
-#import libraries
+# import libraries
 
 import numpy as np
 import pandas as pd
@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 
 def eda(input_file, target):
-    """This function takes dataframe with numeric and non numeric variables splits the data into train and test dataframe, provides 
-    statistical summary of the numeric variables for a dataframe. This also provides imbalance data information. 
+    """This function takes dataframe with numeric and non numeric variables splits the data into train and test dataframe, provides
+    statistical summary of the numeric variables for a dataframe. This also provides imbalance data information.
     Additonally, the function plots a correlation matrix of each numeric variable.
 
     Parameters
@@ -38,23 +38,38 @@ def eda(input_file, target):
     >>>res
     """
 
-# def eda(input_file, target):
+    # def eda(input_file, target):
     # Check the dataframe input
     if not isinstance(input_file, pd.DataFrame):
-        raise Exception("The value of the argument 'dataframe' " +
-                        "should be of type pandas dataframe.")
+        raise Exception(
+            "The value of the argument 'dataframe' "
+            + "should be of type pandas dataframe."
+        )
 
     results = {}
-    train_df, test_df = train_test_split(
-        input_file, test_size=0.2, random_state=123)
+    train_df, test_df = train_test_split(input_file, test_size=0.2, random_state=123)
 
-    results = {"head": train_df.head(3),
-               "tail": train_df.tail(3),
-               "shape": train_df.shape,
-               "data_info_num": train_df.select_dtypes('number').columns.to_list(),
-               "data_info_cat": list(set(list(train_df.columns)) - set(train_df.select_dtypes('number').columns.to_list())),
-               "data_character": train_df.describe(include='all'),
-               "imbalance": train_df["target"].value_counts(normalize=False, dropna=True),
-               "correlation": sns.heatmap(train_df.corr(), annot=True, vmin=-1, vmax=1, center=0, cmap='coolwarm', linewidths=3, linecolor='black')}
+    results = {
+        "head": train_df.head(3),
+        "tail": train_df.tail(3),
+        "shape": train_df.shape,
+        "data_info_num": train_df.select_dtypes("number").columns.to_list(),
+        "data_info_cat": list(
+            set(list(train_df.columns))
+            - set(train_df.select_dtypes("number").columns.to_list())
+        ),
+        "data_character": train_df.describe(include="all"),
+        "imbalance": train_df["target"].value_counts(normalize=False, dropna=True),
+        "correlation": sns.heatmap(
+            train_df.corr(),
+            annot=True,
+            vmin=-1,
+            vmax=1,
+            center=0,
+            cmap="coolwarm",
+            linewidths=3,
+            linecolor="black",
+        ),
+    }
 
-    return(results)
+    return results
