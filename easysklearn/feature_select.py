@@ -11,38 +11,28 @@ def feature_select(X_train, y_train, threshold=0.05):
     Parameters
     ----------
     X_train : Pandas DataFrame
-              The training set of the data.
+              The training set of the data
     
     y_train : Pandas DataFrame
-              The target of the data.
+              The target of the data
     
-    threshold : int (default=None)
-                user input threshold used for stopping criteria.
+    threshold : float (default=0.05)
+                user input threshold between 0 and 1 used for bounding features selected
     
     Returns
     -------
-<<<<<<< Updated upstream
-    result : Pandas DataFrame
-             A DataFrame containing the selected features, i.e. the best features in the model       
-=======
     result : List
-             A list containing the selected features, i.e. the best features in the model
+             A list containing the selected features of type str, i.e. the best features in the model
              
->>>>>>> Stashed changes
     Examples
     --------
     >>> from easysklearn import feature_select
     >>> from sklearn.linear_model import LinearRegression
     
-    >>> feature_select(X_train, y_train, threshold=None)
+    >>> feature_select(X_train, y_train)
     """
-<<<<<<< Updated upstream
- 
-    # exception handling
-    if len(X_train.shape) != 2:
-        raise ValueError('X_train must be 2-dimensional.')
-=======
     
+    # exception handling
     if type(X_train) not in {pd.DataFrame}:
         raise TypeError('X_train must be a Pandas DataFrame.')
 
@@ -51,56 +41,26 @@ def feature_select(X_train, y_train, threshold=0.05):
         
     if type(y_train) not in {pd.DataFrame, pd.Series}:
         raise TypeError('y_train must be a Pandas DataFrame.')
->>>>>>> Stashed changes
 
     if len(y_train.shape) != 1:
         raise ValueError('y_train must be 1-dimensional.')
         
-<<<<<<< Updated upstream
-    if X_train.shape[0] != y_train.shape[0]:
-        raise ValueError(f'X_train and y_train have a dimensions mismatch: '
-            '[{X_train.shape[0]}, {y_train.shape[0]}]')
-    
-=======
     if X_train.shape[0] != y.shape[0]:
-        raise ValueError(f'X_train and y_train have a dimensions mismatch: '
-            '[{X.shape[0]}, {y.shape[0]}]')
-    
-    if type(threshold) not in {float}:
-        raise TypeError('Threshold must be a float')
-    
     # bound threshold - percentage change
     if (threshold < 0.0 or threshold > 1.0):
         raise ValueError('Threshold must be a float between 0 and 1')
     
     # initialize variables
->>>>>>> Stashed changes
     initial_features = X_train.columns.tolist()
     best_features = []
     scores = []
     max_features = X_train.shape[1]
     previous = 0
     
-    for j in range(0, max_features):
         remaining_features = list(set(initial_features)-set(best_features))
         temp = pd.Series(index=remaining_features, dtype= 'float64')
         for temp_feature in remaining_features:
             
-<<<<<<< Updated upstream
-            model = LinearRegression().fit(X_train[best_features+[temp_feature]], y_train)
-            temp[temp_feature] = 1 - model.score(X_train[best_features+[temp_feature]], y_train)
-        
-        min_value = temp.min()
-        scores.append(min_value)
-        
-        # Stopping Criteria: Based on threshold 
-        if (j > 1):
-            previous = sorted(np.array(scores))[1]
-            if(((previous - np.min(scores)) / previous) >= threshold):
-                break
-        best_features.append(temp.idxmin())   
-    return best_features 
-=======
             # fit and score data
             model = LinearRegression().fit(X_train[best_features+[temp_feature]], y_train)
             temp[temp_feature] = model.score(X_train[best_features+[temp_feature]], y_train)
@@ -116,6 +76,6 @@ def feature_select(X_train, y_train, threshold=0.05):
             previous = previous.max()
             if(((max_val - previous) / previous) > threshold):
                 break
-        best_features.append(temp.idxmax())   
+        best_features.append(temp.idxmax())  
+
     return best_features
->>>>>>> Stashed changes
