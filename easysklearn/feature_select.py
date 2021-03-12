@@ -6,8 +6,8 @@ def feature_select(X_train, y_train, threshold=0.05):
     """
     Performs forward selection of features in the data by starting with an empty model, 
     and iteratively adds features that improve the model's score. The algorithm stops once 
-    the increase of the accuracy from an additional features is smaller than the threshold.
-    
+    the decrease of the accuracy from an additional features is bigger than the threshold.
+
     Parameters
     ----------
     X_train : Pandas DataFrame
