@@ -1,5 +1,6 @@
 # easysklearn 
 
+[![build](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/build.yml)
 [![Deploy](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/deploy.yml)
 ![](https://github.com/yzr1996/easysklearn/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/yzr1996/easysklearn/branch/main/graph/badge.svg)](https://codecov.io/gh/yzr1996/easysklearn) ![Release](https://github.com/yzr1996/easysklearn/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/easysklearn/badge/?version=latest)](https://easysklearn.readthedocs.io/en/latest/?badge=latest)
 
