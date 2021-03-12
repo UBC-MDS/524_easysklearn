@@ -41,9 +41,24 @@ def baseline_fun(
 
     Examples
     --------
-    >>> from easysklearn import baseline_fun
+    >>> from easysklearn.baseline_fun import baseline_fun
 
-    >>> baseline_fun(x_train, y_train, type = 'regression', metrics = 'neg_root_mean_squared_error')
+    >>> import pandas as pd
+
+    >>> import sklearn.datasets as datasets
+
+    >>> iris = datasets.load_iris(return_X_y=True)
+
+    >>> X = pd.DataFrame(iris[0])
+
+    >>> y = pd.DataFrame(iris[1])
+
+    >>> baseline_fun(X, y, type = 'regression', metrics = 'neg_root_mean_squared_error')
+            DummyRegressor	LinearRegression
+    fit_time	0.002573	0.003994
+    score_time	0.002200	0.002614
+    test_score	-0.882971	-0.244363
+    train_score	-0.790971	-0.209256
     """
 
     # input test
