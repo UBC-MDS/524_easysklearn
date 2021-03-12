@@ -29,12 +29,24 @@ def test_feature_select():
 
 def test_feature_input():
     """
+<<<<<<< Updated upstream
     This test function tests the input exceptions of feature_select() 
     """  
     df = pd.DataFrame(np.random.randint(0,10,size=(10, 5)), columns=list('ABCDE')) 
     one_d_array = pd.Series(np.random.rand(10,))
     random_array = pd.Series(np.random.rand(11,))
     
+=======
+    This test function tests the input exceptions of feature_select()
+    """
+    df = pd.DataFrame(np.random.randint(0, 10, size=(10, 5)), columns=list("ABCDE"))
+    one_d_array = pd.Series(np.random.rand(10, ))
+    random_array = pd.Series(np.random.rand(11,))
+    threshold = 0.05
+
+    assert isinstance(threshold, float)
+
+>>>>>>> Stashed changes
     # X must not be 1-d either
     with pytest.raises(ValueError):
         feature_select(one_d_array, one_d_array)
@@ -47,4 +59,22 @@ def test_feature_input():
     with pytest.raises(ValueError):
         feature_select(df, random_array)
 
+<<<<<<< Updated upstream
 
+=======
+    # test threshold
+    with pytest.raises(ValueError):
+        feature_select(df, one_d_array, 1.2)
+    
+    with pytest.raises(ValueError):
+        feature_select(df, one_d_array, -0.2)
+    
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, 5)
+
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, "hi")
+
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, [0.8])
+>>>>>>> Stashed changes
