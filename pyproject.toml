@@ -11,6 +11,7 @@ numpy = "^1.20.1"
 pandas = "^1.2.3"
 seaborn = "^0.11.1"
 sklearn = "^0.0"
+python-semantic-release = "^7.15.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
@@ -26,3 +27,9 @@ ipykernel = "^5.5.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = "easysklearn/__init__.py:__version__"
+version_source = "commit"
+upload_to_pypi = "false"
+patch_without_tag = "true"
