@@ -32,7 +32,8 @@ def test_feature_input():
     """
     This test function tests the input exceptions of feature_select()
     """
-    df = pd.DataFrame(np.random.randint(0, 10, size=(10, 5)), columns=list("ABCDE"))
+    df = pd.DataFrame(np.random.randint(
+        0, 10, size=(10, 5)), columns=list("ABCDE"))
     one_d_array = pd.Series(
         np.random.rand(
             10,
@@ -47,7 +48,6 @@ def test_feature_input():
     threshold = 0.05
 
     assert isinstance(threshold, float)
-
 
     # X must not be 1-d either
     with pytest.raises(ValueError):
@@ -76,4 +76,3 @@ def test_feature_input():
 
     with pytest.raises(TypeError):
         feature_select(df, one_d_array, [0.8])
-
