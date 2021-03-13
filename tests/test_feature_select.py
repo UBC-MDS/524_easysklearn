@@ -43,9 +43,11 @@ def test_feature_input():
             11,
         )
     )
+
     threshold = 0.05
 
     assert isinstance(threshold, float)
+
 
     # X must not be 1-d either
     with pytest.raises(ValueError):
@@ -74,3 +76,4 @@ def test_feature_input():
 
     with pytest.raises(TypeError):
         feature_select(df, one_d_array, [0.8])
+

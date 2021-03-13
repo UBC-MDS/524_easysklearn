@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
+
 def feature_select(X_train, y_train, threshold=0.05):
     """
     Performs forward selection of features in the data by starting with an empty model, 
@@ -11,6 +12,7 @@ def feature_select(X_train, y_train, threshold=0.05):
     Parameters
     ----------
     X_train : Pandas DataFrame
+
               The training set of the data
     
     y_train : Pandas DataFrame
@@ -28,15 +30,18 @@ def feature_select(X_train, y_train, threshold=0.05):
     --------
     >>> from easysklearn import feature_select
     >>> from sklearn.linear_model import LinearRegression
+
     
     >>> feature_select(X_train, y_train)
     """
     
+
     # exception handling
     if type(X_train) not in {pd.DataFrame}:
         raise TypeError('X_train must be a Pandas DataFrame.')
 
     if len(X_train.shape) != 2:
+
         raise ValueError('X_train must be 2-dimensional.')
         
     if type(y_train) not in {pd.DataFrame, pd.Series}:
@@ -52,6 +57,7 @@ def feature_select(X_train, y_train, threshold=0.05):
         raise ValueError('Threshold must be a float between 0 and 1')
     
     # initialize variables
+
     initial_features = X_train.columns.tolist()
     best_features = []
     scores = []
@@ -78,5 +84,6 @@ def feature_select(X_train, y_train, threshold=0.05):
             if(((max_val - previous) / previous) > threshold):
                 break
         best_features.append(temp.idxmax())  
+
 
     return best_features
