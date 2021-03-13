@@ -1,8 +1,8 @@
-import numpy as np
 import pandas as pd
+from sklearn.impute import SimpleImputer
 
 
-def miss_data(x_train, x_test, method="mean"):
+def miss_data(x_train, x_test, strategy="mean"):
     """
     Impute value(s) wherever there is (are) a missing value(s) in the dataframe.
 
@@ -18,7 +18,7 @@ def miss_data(x_train, x_test, method="mean"):
     x_test : Pandas DataFrame
              The test set DataFrame with (or without) missing values in it.
 
-    method: string
+    strategy: string
             The imputation strategy:
 
             Imputing the mean along each column is the default setting.
@@ -50,7 +50,7 @@ def miss_data(x_train, x_test, method="mean"):
     >>> x_test = pd.DataFrame(np.array([[2500, np.nan, 4], [5000, 750_000, 4],
     [np.nan, 1_200_000, 5]]), columns = ['size', 'price', 'bedrooms'])
 
-    >>> x_train_imp, x_test_imp = miss_data(x_train, x_test, method = strategy)
+    >>> x_train_imp, x_test_imp = miss_data(x_train, x_test, strategy = strategy)
 
     >>> x_train_imp
         size     price    bedrooms
@@ -71,10 +71,10 @@ def miss_data(x_train, x_test, method="mean"):
     if not isinstance(x_test, pd.DataFrame):
         raise TypeError("Input x_test must be a data frame")
 
-    if not isinstance(method, str):
+    if not isinstance(strategy, str):
         raise TypeError("method must be a string")
 
-    if type not in ["mean", "media", "most_frequent"]:
+    if strategy not in ["mean", "median", "most_frequent"]:
         raise TypeError("Please check the strategy used for imputation")
 
     if x_train.shape[1] != x_test.shape[1]:
