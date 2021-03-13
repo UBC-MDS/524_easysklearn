@@ -34,7 +34,7 @@ def baseline_fun(
             What kind of score metrics to use for regression problem, the default one is r2
             Use sorted(sklearn.metrics.SCORERS.keys()) to get valid options.
 
-    Returns
+    Return
     -------
     score : Pandas DataFrame
             The DataFrame contains the mean of fit time, score time, training score and validation score by 5-fold cross validation for both two models.
