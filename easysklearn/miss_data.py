@@ -1,7 +1,7 @@
-import numpy as np
 import pandas as pd 
+from sklearn.impute import SimpleImputer
 
-def miss_data(x_train, x_test, method = "mean"):
+def miss_data(x_train, x_test, strategy = "mean"):
     """
     Impute value(s) wherever there is (are) a missing value(s) in the dataframe. 
     
