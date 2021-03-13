@@ -1,15 +1,10 @@
 # import libraries
 
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import seaborn as sns
-import matplotlib.pyplot as plt
-import pytest
 from easysklearn.eda import eda
 
 # generate dataset
-import pandas as pd
 
 
 def get_test_data():
@@ -48,4 +43,4 @@ assert train_df.shape[0] == int(len(gen_data) * 0.8)
 # Check if shape of train and test dataset is same
 
 if len(train_df.columns) != len(test_df.columns):
-    raise ValueError(f"X_train and y_train have a dimensions mismatch")
+    raise ValueError("X_train and y_train have a dimensions mismatch")

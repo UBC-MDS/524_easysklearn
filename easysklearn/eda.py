@@ -1,10 +1,8 @@
 # import libraries
 
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 def eda(input_file, target):
@@ -47,7 +45,8 @@ def eda(input_file, target):
         )
 
     results = {}
-    train_df, test_df = train_test_split(input_file, test_size=0.2, random_state=123)
+    train_df, test_df = train_test_split(
+        input_file, test_size=0.2, random_state=123)
 
     results = {
         "head": train_df.head(3),
