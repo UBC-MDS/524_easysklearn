@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "easysklearn"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["yzr96 <eric.yu@usask.ca>"]
 license = "MIT"
