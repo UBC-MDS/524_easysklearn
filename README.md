@@ -32,11 +32,28 @@ To our knowledge, while pandas profiling provides some data statistical analysi
 
 ## Dependencies
 
-- TODO
+
+- python = "^3.8"
+- pandas = "^1.2.3"
+- numpy = "^1.20.1"
+- matplotlib = "^3.3.4"
+- sklearn = "^0.0"
+- seaborn = "^0.11.1"
+- ipython = "^7.21.0"    
+- jupyter = "^1.0.0"
+
 
 ## Usage
 
-- TODO
+The easysklearn package help you to build exploratory data analysis, missing value treatment, helping in selecting appropreate features of the data and in selecting a model.
+
+easysklearn includes multiple custom functions to perform initial exploratory analysis on any dataframe describing the structure and the relationships present in the data. The generated output can be obtained in both object and graphical form.
+
+`import pandas as pd
+from easysklearn import easysklearn
+
+
+`
 
 ## Documentation
 

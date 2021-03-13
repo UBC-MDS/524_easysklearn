@@ -6,9 +6,12 @@ import seaborn as sns
 
 
 def eda(input_file, target):
-    """This function takes dataframe with numeric and non numeric variables splits the data into train and test dataframe, provides
-    statistical summary of the numeric variables for a dataframe. This also provides imbalance data information.
-    Additonally, the function plots a correlation matrix of each numeric variable.
+    """This function takes dataframe with numeric and non numeric variables
+    splits the data into train and test dataframe, provides
+    statistical summary of the numeric variables for a dataframe.
+    This also provides imbalance data information.
+    Additonally, the function plots a correlation matrix
+    of each numeric variable.
 
     Parameters
     -----------
@@ -58,7 +61,7 @@ def eda(input_file, target):
             - set(train_df.select_dtypes("number").columns.to_list())
         ),
         "data_character": train_df.describe(include="all"),
-        "imbalance": train_df["target"].value_counts(normalize=False, dropna=True),
+        "imbalance": train_df["target"].value_counts(),
         "correlation": sns.heatmap(
             train_df.corr(),
             annot=True,
