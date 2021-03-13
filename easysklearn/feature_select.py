@@ -46,9 +46,10 @@ def feature_select(X_train, y_train, threshold=0.05):
         raise ValueError('y_train must be 1-dimensional.')
         
     if X_train.shape[0] != y.shape[0]:
+        
     # bound threshold - percentage change
-    #if ((threshold < 0.0) or (threshold > 1.0)):
-     #   raise ValueError('Threshold must be a float between 0 and 1')
+    if ((threshold < 0.0) or (threshold > 1.0)):
+        raise ValueError('Threshold must be a float between 0 and 1')
     
     # initialize variables
     initial_features = X_train.columns.tolist()
