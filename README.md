@@ -2,7 +2,7 @@
 
 [![build](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/build.yml/badge.svg)](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/build.yml)
 [![Deploy](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/524_easysklearn/actions/workflows/deploy.yml)
-![](https://github.com/yzr1996/easysklearn/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/524_easysklearn/branch/main/graph/badge.svg?token=3KW44NKWAS)](https://codecov.io/gh/UBC-MDS/524_easysklearn) ![Release](https://github.com/yzr1996/easysklearn/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/easysklearn/badge/?version=latest)](https://easysklearn.readthedocs.io/en/latest/?badge=latest)
+![](https://github.com/yzr1996/easysklearn/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/524_easysklearn/branch/main/graph/badge.svg?token=3KW44NKWAS)](https://codecov.io/gh/UBC-MDS/524_easysklearn) [![Documentation Status](https://readthedocs.org/projects/easysklearn/badge/?version=latest)](https://easysklearn.readthedocs.io/en/latest/?badge=latest)
 
 ## Summary
 
