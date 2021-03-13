@@ -1,4 +1,3 @@
-from sklearn.linear_model import LinearRegression
 from sklearn.datasets import load_boston
 from easysklearn.feature_select import feature_select
 import numpy as np
@@ -45,6 +44,11 @@ def test_feature_input():
         )
     )
 
+    threshold = 0.05
+
+    assert isinstance(threshold, float)
+
+
     # X must not be 1-d either
     with pytest.raises(ValueError):
         feature_select(one_d_array, one_d_array)
@@ -56,3 +60,20 @@ def test_feature_input():
     # X and y must have consistent number of samples
     with pytest.raises(ValueError):
         feature_select(df, random_array)
+
+    # test threshold
+    with pytest.raises(ValueError):
+        feature_select(df, one_d_array, 1.2)
+
+    with pytest.raises(ValueError):
+        feature_select(df, one_d_array, -0.2)
+
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, 5)
+
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, "hi")
+
+    with pytest.raises(TypeError):
+        feature_select(df, one_d_array, [0.8])
+
