@@ -33,23 +33,23 @@ x_test = pd.DataFrame(
 def test_input_data():
 
     with raises(TypeError):
-        baseline_fun(x_train, x_test, method="sum")
+        miss_data(x_train, x_test, strategy="sum")
 
     with raises(TypeError):
-        baseline_fun(1, x_test, method="mean")
+        miss_data(1, x_test, strategy="mean")
 
     with raises(TypeError):
-        baseline_fun(x_train, 1, method="mean")
+        miss_data(x_train, 1, strategy="mean")
 
     with raises(TypeError):
-        baseline_fun(x_train, x_test, method=2)
+        miss_data(x_train, x_test, strategy=2)
 
 
 def test_output_result():
 
-    x_train_imp_mean, x_test_imp_mean = miss_data(x_train, x_test, method="mean")
+    x_train_imp_mean, x_test_imp_mean = miss_data(x_train, x_test, strategy="mean")
 
-    x_train_imp_med, x_test_imp_med = miss_data(x_train, x_test, method="median")
+    x_train_imp_med, x_test_imp_med = miss_data(x_train, x_test, strategy="median")
 
     assert x_train_imp_mean.shape == (
         4,
