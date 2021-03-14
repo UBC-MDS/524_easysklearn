@@ -6,7 +6,7 @@
 
 ## Summary
 
-Easysklearn is an open-source library designed to perform exploratory data analysis, to help with missing data imputation and to give baseline models. Also, it assists in feature selection which is a common problem when undertaking a data science or machine learning analysis. As its names indicate, this function performs like sklearn. it carries out functions such as splitting data, model selection etc.
+Easysklearn is an open-source library designed to perform exploratory data analysis, to help with missing data imputation and to give baseline models. Also, it assists in feature selection which is a common problem when undertaking a data science or machine learning analysis. As its name indicates, this function operates like sklearn. It carries out tasks such as splitting data, feature selection, model fitting, numerical missing data imputation etc.
 
 ## Installation
 
@@ -18,7 +18,7 @@ $ pip install -i https://test.pypi.org/simple/ easysklearn
 
 This package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical and categorical features. Each function will have it's own required and optional arguments.
 
-- eda: EDA data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
+- **eda**: EDA data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
 
 - Data imputation: It will handle missing only numerical data in the data frame.
 
