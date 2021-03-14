@@ -45,8 +45,6 @@ To our knowledge, while pandas profiling provides some data statistical analysi
 
 ## Usage
 
-```from easysklearn import easysklearn```
-
 | Task | Function  |
 |------------|-----|
 | Exploratory data analysis| `eda(df, target)`|
@@ -59,13 +57,16 @@ To our knowledge, while pandas profiling provides some data statistical analysi
 ## Example
 
 ```Python
+
+from easysklearn import eda, baseline_fun, miss_data, feature_select
+
 example_df = pd.DataFrame(np.array([[4500, np.nan, 4], [3450, 350_000, 6],
     [np.nan, 800_000, 9]]), columns = ['size', 'price', 'bedrooms'])
 
 - eda = eda(example_df, target)
-- miss_data= miss_data(x_train, x_test, strategy="mean")
-- feature_selection = feature_select(X_train, y_train, threshold=0.05)
-- baseline_fuc= baseline_fun(X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2")
+- x_train, x_test = miss_data(x_train, x_test, strategy="mean")
+- results = baseline_fun(X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2")
+- best_features = feature_select(X_train, y_train, threshold=0.05)
 ```
 
 ## Documentation
