@@ -18,17 +18,17 @@ $ pip install -i https://test.pypi.org/simple/ easysklearn
 
 This package introduces a data science enthusiast, with little to no knowledge of machine learning, to the common steps required when undertaking a Supervised learning analysis. The package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical features. The functions might have their own required and optional arguments.
 
-- **eda**: EDA data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
+- **eda**: The `eda` function will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
 
-- Data imputation: It will handle missing numerical data in the data frame.
+- **miss_data**: The `miss_data` function will handle missing numerical data in the data frame.
 
-- Baseline Function: Baseline function will give users a quick check of the performance of the selected sklearn models as a baseline for further model training.
+- **baseline_fun**: The `baseline_fun` function will give users a quick check of the performance of the selected sklearn models compared to a baseline model, upon which the model can be improved. 
 
-- Feature selection: This will remove redundant features based on the forward selection.
+- **feature_select**: The `feature_select` function will remove redundant features based on the forward selection.
 
 ## How the easysklearn package fits into the Python ecosystem
 
-To our knowledge, while pandas profiling provides some data statistical analysis, there is no general-purpose library for performing the above task together in the Python ecosystem.
+To our knowledge, while pandas profiling provides some data statistical analysis, there is no general-purpose library for performing the aforementioned tasks together in the Python ecosystem.
 
 ## Dependencies
 
@@ -57,15 +57,16 @@ To our knowledge, while pandas profiling provides some data statistical analysi
 
 
 ## Example
-example_df = [[1,2,1],[1,3,3],[2,3,4]]
+
+```Python
+example_df = pd.DataFrame(np.array([[4500, np.nan, 4], [3450, 350_000, 6],
+    [np.nan, 800_000, 9]]), columns = ['size', 'price', 'bedrooms'])
 
 - eda = eda(example_df, target)
 - miss_data= miss_data(x_train, x_test, strategy="mean")
 - feature_selection = feature_select(X_train, y_train, threshold=0.05)
-- baseline_fuc= baseline_fun(
-    X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2"
-)
-
+- baseline_fuc= baseline_fun(X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2")
+```
 
 ## Documentation
 
