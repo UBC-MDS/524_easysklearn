@@ -6,7 +6,7 @@
 
 ## Summary
 
-Easysklearn is an open-source library designed to perform exploratory data analysis, to help with missing data imputation and to give baseline models. Also, it assists in feature selection which is a common problem when undertaking a data science or machine learning analysis. As its names indicate, this function performs like sklearn. it carries out functions such as splitting data, model selection etc.
+Easysklearn is a python package designed to perform exploratory data analysis, to help with missing data imputation and to give baseline models. Also, it assists in feature selection which is a common problem when undertaking a data science or machine learning analysis. As its name indicates, this function operates like sklearn. It carries out tasks such as splitting data, feature selection, model fitting, numerical missing data imputation etc.
 
 ## Installation
 
@@ -16,19 +16,19 @@ $ pip install -i https://test.pypi.org/simple/ easysklearn
 
 ## Features
 
-This package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical and categorical features. Each function will have it's own required and optional arguments.
+This package introduces a data science enthusiast, with little to no knowledge of machine learning, to the common steps required when undertaking a Supervised learning analysis. The package contains four functions that accept a pandas DataFrame. All functions can be used on a dataset with numerical features. The functions might have their own required and optional arguments.
 
-- eda: EDA data analysis will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
+- **eda**: The `eda` function will split the original data into train and test dataset and will generate a statistical report such as correlation between the variables, number of missing data, class imbalance and type of data present in the dataset.
 
-- Data imputation: It will handle missing only numerical data in the data frame.
+- **miss_data**: The `miss_data` function will handle missing numerical data in the data frame.
 
-- Baseline Function: Baseline function will give users a quick check of the performance of the selected sklearn models as a baseline for further model training.
+- **baseline_fun**: The `baseline_fun` function will give users a quick check of the performance of the selected sklearn models compared to a baseline model, upon which the model can be improved. 
 
-- Feature selection: This will remove redundant features based on the forward selection.
+- **feature_select**: The `feature_select` function will remove redundant features based on the forward selection.
 
 ## How the easysklearn package fits into the Python ecosystem
 
-To our knowledge, while pandas profiling provides some data statistical analysis, there is no general-purpose library for performing the above task together in the Python ecosystem.
+To our knowledge, while pandas profiling provides some data statistical analysis, there is no general-purpose library for performing the aforementioned tasks together in the Python ecosystem.
 
 ## Dependencies
 
@@ -45,29 +45,29 @@ To our knowledge, while pandas profiling provides some data statistical analysi
 
 ## Usage
 
-```from easysklearn import easysklearn```
-
 | Task | Function  |
 |------------|-----|
 | Exploratory data analysis| `eda(df, target)`|
-| Numerical data imputation by mean| `miss_data(x_train, x_test, strategy="mean")`|
+| Numerical data imputation| `miss_data(x_train, x_test, strategy="mean")`|
+| Compare selected model to a baseline model| `baseline_fun(X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2")`|
 | Feature selection to reduce data dimension| `feature_select(X_train, y_train, threshold=0.05)`|
-| Compare model to select the best model| `baseline_fun(
-    X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2"
-)`|
 
 
 
 ## Example
-example_df = [[1,2,1],[1,3,3],[2,3,4]]
+
+```Python
+
+from easysklearn import eda, baseline_fun, miss_data, feature_select
+
+example_df = pd.DataFrame(np.array([[4500, np.nan, 4], [3450, 350_000, 6],
+    [np.nan, 800_000, 9]]), columns = ['size', 'price', 'bedrooms'])
 
 - eda = eda(example_df, target)
-- miss_data= miss_data(x_train, x_test, strategy="mean")
-- feature_selection = feature_select(X_train, y_train, threshold=0.05)
-- baseline_fuc= baseline_fun(
-    X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2"
-)
-
+- x_train, x_test = miss_data(x_train, x_test, strategy="mean")
+- results = baseline_fun(X_train, y_train, type="regression", metrics_1="accuracy", metrics_2="r2")
+- best_features = feature_select(X_train, y_train, threshold=0.05)
+```
 
 ## Documentation
 
